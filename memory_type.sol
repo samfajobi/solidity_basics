@@ -1,6 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0
 
-
-pragma solidity ^0.8.0
+pragma solidity ^0.8.0;
 
 
 contract storageType {
@@ -14,7 +14,7 @@ contract storageType {
     */
 
     string name = "Abolaji";
-    arr[5] = [2,2,5,6,8]
+    uint256[5] arr = [2,2,5,6,8];
 
 
     /**MEMORY
@@ -23,8 +23,8 @@ contract storageType {
     * Below are examples....
     */
      
-    function storage_type2() view return(string memory James) {
-        return 
+    function storage_type2() pure public returns(string memory) {
+        return 'James';
 
     }
 
@@ -35,7 +35,7 @@ contract storageType {
     * Below are examples...
     */
 
-    function storage_type3() view return(uint calldata address) {
-
+    function storage_type3(string calldata name2) public  {
+        name =  name2;
     }
 }
