@@ -11,6 +11,19 @@ contract MakeChanges {
      function and there is a need to revert all the changes that has been made 
      if a condition is not met in the function. 
     */
+    error InsufficientBalance(uint256 available, uint256 required);
+    
+    function RevertFuncition(uint amount)  {
+        if (amount <= 11) {
+            amount++
+        } else {
+            revert InsufficientBalance({
+                available: balance[msg.sender],
+                required: amount
+            })
+        }
+        return amount
+    }
 
 
 
@@ -34,7 +47,5 @@ contract MakeChanges {
     function AssertFunction(uint amount) {
         amount[amount >= 1] = true;
         assert(amount[amount >= 1] == true);
-    }
-
-
+    }   
 }
